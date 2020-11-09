@@ -1,8 +1,18 @@
 import Head from "next/head";
+import { useColorMode } from "theme-ui";
 import { Button } from "theme-ui";
 import styles from "../styles/Home.module.css";
 
+const modes = ["light", "dark", "deep"];
+
 export default function Home() {
+    const [mode, setMode] = useColorMode();
+
+    function cycleMode() {
+        const i = (modes.indexOf(mode) + 1) % modes.length;
+        setMode(modes[i]);
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -17,6 +27,8 @@ export default function Home() {
                     Get started by editing{" "}
                     <code className={styles.code}>pages/index.js</code>
                 </p>
+
+                <Button onClick={cycleMode}>Cycle Colors</Button>
 
                 <div className={styles.grid}>
                     <a href="https://nextjs.org/docs" className={styles.card}>
