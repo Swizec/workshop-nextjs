@@ -3,6 +3,10 @@ import { future } from "@theme-ui/presets";
 
 const theme = {
     ...future,
+    sizes: {
+        ...future.sizes,
+        container: 800,
+    },
     colors: {
         ...future.colors,
         modes: {

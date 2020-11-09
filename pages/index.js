@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useColorMode } from "theme-ui";
 import { Button } from "theme-ui";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const modes = ["light", "dark", "deep"];
 
@@ -29,6 +30,7 @@ export default function Home() {
                 </p>
 
                 <Button onClick={cycleMode}>Cycle Colors</Button>
+                <Link href="/my-epic-page">My epic page</Link>
 
                 <div className={styles.grid}>
                     <a href="https://nextjs.org/docs" className={styles.card}>
